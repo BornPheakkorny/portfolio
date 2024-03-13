@@ -8,6 +8,7 @@
     scroll-behavior: smooth;
     text-decoration: none;
     font-family: 'Poppins',sans-serif;
+    
 }
 :root{
     --bg-color: #081b29;
@@ -17,9 +18,10 @@
 }
 html{
     font-size: 62.5%;
-    overflow: hidden;
+    overflow: auto;
 }
 body{
+    overflow: auto;
     background: var(--bg-color);
     color: var(--text-color);
 }
@@ -36,7 +38,7 @@ body{
     z-index: 100;
 }
 .logo{
-    font-size: 2.5rem;
+    font-size: 3rem;
     color: var(--text-color);
     font-weight: 600;
 }
@@ -57,6 +59,50 @@ body{
     cursor: pointer;
     display: none;
 }
+.checkbtn{
+    font-size: 4rem;
+    color: white;
+    float: right;
+    padding: 0;
+    line-height: 3rem;
+    margin-right: 0.5rem;
+    display: none;
+}
+#check{
+    display: none;
+}
+@media screen and (max-width: 875px) {
+    .navbar {
+        display: flex; /* Change from "display: none;" */
+        flex-direction: column;
+        position: fixed; /* Change from "position: absolute;" */
+        top: 6rem; /* Adjust positioning according to your header height */
+        left: -100%; /* Initially hide off the screen */
+        width: 100%;
+        background-color: var(--bg-color);
+        padding-top: 6rem; /* Adjust as needed */
+        transition: left 0.3s ease; /* Add transition */
+        z-index: 99;
+    }
+
+    .navbar.active {
+        left: 0; /* Show menu by moving it to the left */
+    }
+
+    .navbar a {
+        padding: 1.5rem 2rem;
+        margin: 0;
+        text-align: center;
+        width: 100%;
+    }
+
+    .checkbtn {
+        display: block;
+        cursor: pointer;
+    }
+}
+
+
 
 section{
     min-height: 100vh;
@@ -268,6 +314,7 @@ section{
     align-items: center;
     flex-direction: column;
     min-height: auto;
+    padding-top: 5rem;
     padding-bottom: 5rem;
 }
 .education .education-row{
@@ -431,6 +478,7 @@ section{
 
 .contact{
     min-height: auto;
+    padding-top: 5rem;
     padding-bottom: 7rem;
 }
 .contact form{
